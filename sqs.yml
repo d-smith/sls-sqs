@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Create a queue to feed a lambda from
+
+Resources:
+  MyQueue:
+    Type: AWS::SQS::Queue
+    
+Outputs:
+  QueueUrl:
+    Value: !Ref MyQueue
+
+  QueueArn:
+    Value: !GetAtt MyQueue.Arn
